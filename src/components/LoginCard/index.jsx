@@ -1,11 +1,21 @@
 import {LockOutlined, SafetyCertificateOutlined, UserOutlined, QqOutlined, WechatOutlined} from '@ant-design/icons';
 import { Button, Checkbox, Form, Input, Divider} from 'antd'
+import {useNavigate} from 'react-router-dom'
 import './index.css'
 
 export default function Index() {
+
+    const navigate = useNavigate()
+
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
     };
+
+    function loginToHome(){
+        navigate("/home",{
+            replace: true,
+        })
+    }
 
     return (
         <div className="card_box">
@@ -81,7 +91,7 @@ export default function Index() {
                     </Form.Item>
 
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" className="login-form-button" size="large">
+                        <Button type="primary" htmlType="submit" className="login-form-button" size="large" onClick={() => loginToHome()}>
                             登陆
                         </Button>
                         <br/><br/>
