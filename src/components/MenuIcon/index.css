@@ -1,0 +1,22 @@
+.icon_title_box{
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 0 10px;
+    margin: 3px 0 3px 0;
+}
+
+.icon_area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3px;
+}
+
+.text_area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(77, 76, 76, 0.93);
+}

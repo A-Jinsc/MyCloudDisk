@@ -12,7 +12,7 @@ export default function Index() {
     };
 
     function loginToHome(){
-        navigate("/home",{
+        navigate("/main",{
             replace: true,
         })
     }
