@@ -15,7 +15,7 @@ This is React Demo for practice
 
 - 克隆项目
 
-`> $ git clone https://github.com/CanFoo/react.git`
+`> $ git clone https://github.com/A-Jinsc/MyCloudDisk.git`
 
 - 安装依赖
 
