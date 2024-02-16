@@ -12,10 +12,3 @@
     font-size: 13px;
     font-weight: bold;
 }
-
-.center_area{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80%;
-}

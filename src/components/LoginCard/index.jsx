@@ -12,8 +12,9 @@ export default function Index() {
     };
 
     function loginToHome(){
-        navigate("/main",{
+        navigate("/main/home/all",{
             replace: true,
+            state: {des:'全部'}
         })
     }
 

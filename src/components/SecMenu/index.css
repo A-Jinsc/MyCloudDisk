@@ -1,0 +1,4 @@
+.sec_sider{
+    box-shadow: 2px 0 0 rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(8px);
+}

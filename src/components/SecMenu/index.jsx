@@ -1,6 +1,5 @@
 import React from 'react';
 import {Layout, Menu} from "antd";
-import {useNavigate} from 'react-router-dom';
 import {
     EllipsisOutlined,
     FileOutlined,
@@ -9,28 +8,19 @@ import {
     ProductOutlined,
     VideoCameraOutlined
 } from "@ant-design/icons";
+import './index.css'
 
-export default function Index() {
-    const navigate = useNavigate()
+export default function Index(props) {
     const { Sider } = Layout;
 
     function showData(Obj){
-        console.log(Obj.key === "1")
-        switch(Obj.key){
-            case "1": navigate("all",{state:{des:'全部'}}); break;
-            case "2": navigate("video",{state:{des:'视频'}}); break;
-            case "3": navigate("music",{state:{des:'音频'}}); break;
-            case "4": navigate("picture",{state:{des:'图片'}}); break;
-            case "5": navigate("document",{state:{des:'文档'}}); break;
-            case "6": navigate("other",{state:{des:'其他'}}); break;
-            default: navigate("all",{state:{des:'全部'}}); break;
-        }
+        props.getMenuItem(Obj)
     }
 
     return (
-        <Sider trigger={null} theme="light">
+        <Sider trigger={null} theme="light" className="sec_sider">
             <Menu
-                id="menu"
+                style={{border: '0'}}
                 theme="light"
                 mode="inline"
                 defaultSelectedKeys={['1']}

@@ -3,7 +3,14 @@
     flex-direction: column;
     padding: 0 10px 0 10px;
     margin: 3px 0 3px 0;
+    cursor: pointer;
 }
+
+.icon_title_box:hover{
+    background-color: #d9e8fa;
+    border-radius: 6px;
+}
+
 
 .icon_area{
     display: flex;
@@ -19,4 +26,10 @@
     font-size: 12px;
     font-weight: bold;
     color: rgba(77, 76, 76, 0.93);
+}
+
+.menu_sider{
+    margin-right: 1px;
+    box-shadow: 2px 0 0 rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(8px);
 }
