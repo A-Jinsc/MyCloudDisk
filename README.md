@@ -1,5 +1,5 @@
 # MyCloudDisk
-=======
+
 This is React Demo for practice
 
 - React: 18.2.0
@@ -7,12 +7,12 @@ This is React Demo for practice
 - Vite: 5.1.0
 - Antd: 5.14.1
 
-![](../../Desktop/截屏2024-02-16 19.56.19.png)
-![](../../Desktop/截屏2024-02-16 19.56.30.png)
+![](/Picture/p1.png)
+![](/Picture/p2.png)
 
 
 # 安装与运行程序
-=======
+
 - 克隆项目
 
 `> $ git clone https://github.com/CanFoo/react.git`
