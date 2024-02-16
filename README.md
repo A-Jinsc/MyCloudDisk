@@ -1,13 +1,32 @@
-<<<<<<< HEAD
 # MyCloudDisk
-This is a personal web disk project, based on the web side development, using vite, react, springboot, mysql development
 =======
-# React + Vite
+This is React Demo for practice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- React: 18.2.0
+- React-router-dom: 6.22.0
+- Vite: 5.1.0
+- Antd: 5.14.1
 
-Currently, two official plugins are available:
+![](../../Desktop/截屏2024-02-16 19.56.19.png)
+![](../../Desktop/截屏2024-02-16 19.56.30.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
->>>>>>> master
+
+# 安装与运行程序
+=======
+- 克隆项目
+
+`> $ git clone https://github.com/CanFoo/react.git`
+
+- 安装依赖
+
+`> $ npm install `
+
+- 在项目目录下启动Vite服务
+
+`> $ npm run dev`
+
+- 发布项目命令
+
+`> $ npm run build`
+
+
