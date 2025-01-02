@@ -8,7 +8,11 @@ export default function Index() {
     const navigate = useNavigate()
 
     const onFinish = (values) => {
-        console.log('Received values of form: ', values);
+        console.log('Success:', values);
+    };
+
+    const onFinishFailed = (errorInfo) => {
+        console.log('Failed:', errorInfo);
     };
 
     function loginToHome(){
@@ -32,6 +36,7 @@ export default function Index() {
                         remember: true,
                     }}
                     onFinish={onFinish}
+                    onFinishFailed={onFinishFailed}
                 >
                     <Form.Item
                         name="username"
@@ -39,6 +44,10 @@ export default function Index() {
                             {
                                 required: true,
                                 message: '请输入邮箱!',
+                            },
+                            {
+                                type: 'email',
+                                message: '请输入正确的邮箱格式!'
                             },
                         ]}
                     >
@@ -54,6 +63,10 @@ export default function Index() {
                             {
                                 required: true,
                                 message: '请输入密码!',
+                            },
+                            {
+                                min: 6,
+                                message: '密码长度至少为 6 位!',
                             },
                         ]}
                     >
@@ -92,7 +105,10 @@ export default function Index() {
                     </Form.Item>
 
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" className="login-form-button" size="large" onClick={() => loginToHome()}>
+                        {/*<Button type="primary" htmlType="submit" className="login-form-button" size="large" onClick={() => loginToHome()}>
+                            登陆
+                        </Button>*/}
+                        <Button type="primary" htmlType="submit" className="login-form-button" size="large">
                             登陆
                         </Button>
                         <br/><br/>
