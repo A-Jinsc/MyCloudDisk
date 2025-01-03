@@ -1,6 +1,8 @@
-import {LockOutlined, SafetyCertificateOutlined, UserOutlined, QqOutlined, WechatOutlined} from '@ant-design/icons';
-import { Button, Checkbox, Form, Input, Divider} from 'antd'
+import React, { useState } from 'react';
+import {LockOutlined, UserOutlined, QqOutlined, WechatOutlined} from '@ant-design/icons';
+import { Button, Checkbox, Form, Input, Divider, Modal} from 'antd'
 import {useNavigate} from 'react-router-dom'
+import Vert from '../../components/SlideVerify'
 import './index.css'
 
 export default function Index() {
@@ -13,6 +15,14 @@ export default function Index() {
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
+    };
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const showModal = () => {
+        setIsModalOpen(true);
+    };
+    const handleCancel = () => {
+        setIsModalOpen(false);
     };
 
     function loginToHome(){
@@ -77,22 +87,6 @@ export default function Index() {
                             size="large"
                         />
                     </Form.Item>
-                    <Form.Item
-                        name="safecode"
-                        rules={[
-                            {
-                                required: true,
-                                message: '请输入验证码!',
-                            },
-                        ]}
-                    >
-                        <Input
-                            rootClassName="short_input"
-                            prefix={<SafetyCertificateOutlined className="site-form-item-icon" />}
-                            placeholder="请输入验证码"
-                            size="large"
-                        />
-                    </Form.Item>
                     <Form.Item>
                         <Form.Item name="remember" valuePropName="checked" noStyle>
                             <Checkbox>记住我</Checkbox>
@@ -108,9 +102,12 @@ export default function Index() {
                         {/*<Button type="primary" htmlType="submit" className="login-form-button" size="large" onClick={() => loginToHome()}>
                             登陆
                         </Button>*/}
-                        <Button type="primary" htmlType="submit" className="login-form-button" size="large">
+                        <Button type="primary" htmlType="submit" className="login-form-button" size="large" onClick={showModal}>
                             登陆
                         </Button>
+                        <Modal title="滑动完成验证" width="600px" open={isModalOpen} onCancel={handleCancel} footer={null}>
+                            <Vert/>
+                        </Modal>
                         <br/><br/>
                         <div className="quick_login_place">
                             快捷登陆&nbsp;<QqOutlined className="quick_logo"/><WechatOutlined className="quick_logo"/>
