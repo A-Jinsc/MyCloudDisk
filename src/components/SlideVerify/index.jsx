@@ -4,14 +4,15 @@ import { sleep } from 'ut2';
 import createPuzzle from 'create-puzzle';
 import { RubyOutlined, MehOutlined, SmileOutlined, RedoOutlined, LoadingOutlined } from '@ant-design/icons'
 // 这里是你要自己准备的图片
-import pic from './x.png'
-const SoildCaptcha = (params) => {
+import pic from '../../assets/SlideImg/2.png'
+export default function SoildCaptcha(params){
     const offsetXRef = useRef(0); // x 轴偏移值
     // 查看是否在安全距离
     const verifyCaptcha = async (data) => {
         await sleep();
         if (data.x >= offsetXRef.current - 5 && data.x < offsetXRef.current + 5) {
             setTimeout(() => {
+                params.ifSuccess()
                 params.onSuccess()
             }, 1000)
             return Promise.resolve();
@@ -38,9 +39,8 @@ const SoildCaptcha = (params) => {
                     console.log(data)
                     return verifyCaptcha(data);
                 }}
-                // ！！！！这里是重点！！！！！
-                // bgSize必须和原图片的尺寸一样！！！！！！！！！！！！！！！！！！
-                bgSize={{ width: 550, height: 337 }}
+                // 这里是重点,bgSize必须和原图片的尺寸一样！
+                bgSize={{ width: 510, height: 309 }}
                 tipIcon={{
                     default: <RubyOutlined />,
                     loading: <LoadingOutlined />,
@@ -60,4 +60,4 @@ const SoildCaptcha = (params) => {
     );
 }
 
-export default SoildCaptcha;
+// export default SoildCaptcha;

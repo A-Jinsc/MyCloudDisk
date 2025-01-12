@@ -52,11 +52,12 @@
 .quick_login_place{
     margin: 5px;
     display: flex;
-    justify-content: center;
+    justify-content: center ;
 }
 
 .quick_logo{
-    font-size: 20px;
-    margin: 0px 5px 0px 5px;
+    width: 24px;
+    height: 24px;
+    margin: 5px 20px 5px 20px;
 }
 

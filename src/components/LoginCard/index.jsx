@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import {LockOutlined, UserOutlined, QqOutlined, WechatOutlined} from '@ant-design/icons';
+import {LockOutlined, UserOutlined} from '@ant-design/icons';
 import { Button, Checkbox, Form, Input, Divider, Modal} from 'antd'
 import {useNavigate} from 'react-router-dom'
 import Vert from '../../components/SlideVerify'
 import './index.css'
+import QQ from '../../assets/loginView/QQ.svg'
+import WeChat from '../../assets/loginView/WeChat.svg'
 
 export default function Index() {
 
@@ -11,6 +13,7 @@ export default function Index() {
 
     const onFinish = (values) => {
         console.log('Success:', values);
+        showModal()
     };
 
     const onFinishFailed = (errorInfo) => {
@@ -102,15 +105,17 @@ export default function Index() {
                         {/*<Button type="primary" htmlType="submit" className="login-form-button" size="large" onClick={() => loginToHome()}>
                             登陆
                         </Button>*/}
-                        <Button type="primary" htmlType="submit" className="login-form-button" size="large" onClick={showModal}>
+                        <Button type="primary" htmlType="submit" className="login-form-button" size="large">
                             登陆
                         </Button>
-                        <Modal title="滑动完成验证" width="600px" open={isModalOpen} onCancel={handleCancel} footer={null}>
-                            <Vert/>
+                        <Modal title="滑动完成验证" width="570px" open={isModalOpen} onCancel={handleCancel} footer={null}>
+                            <Vert ifSuccess={handleCancel}/>
                         </Modal>
                         <br/><br/>
+                        <Divider plain>其他方式登录</Divider>
                         <div className="quick_login_place">
-                            快捷登陆&nbsp;<QqOutlined className="quick_logo"/><WechatOutlined className="quick_logo"/>
+                            <img className="quick_logo" src={QQ} alt="QQ"/>
+                            <img className="quick_logo" src={WeChat} alt="WeChat"/>
                         </div>
                     </Form.Item>
                 </Form>
